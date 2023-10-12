@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: #333;
+}
+
+.navbar {
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+.info-bar {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.show {
+    visibility: visible;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    border-right: 16px solid yellow;
+    border-left: 16px solid yellow;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: repeat(5, 45px);
+    grid-template-rows: repeat(5, 45px);
+    gap: 14px 18px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.scoreboard-letter {
+    height: 45px;
+    width: 45px;
+    font-size: 30px;
+    text-transform: uppercase;
+    border: 3px solid #ccc;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.correct {
+    background-color: darkgreen;
+    color: white;
+  }
+  
+  .close {
+    background-color: goldenrod;
+    color: white;
+  }
+  
+  .wrong {
+    background-color: #888;
+    color: white; 
+  }
+  
+  .invalid {
+    animation: flash 1s;
+  }
+
+  @keyframes flash {
+    6% {
+      border-color: red;
+    }
+  
+    100% {
+      border-color: white;
+    }
+  }
+
+  /* winner animation */
+
+@keyframes rainbow {
+    100%,
+    0% {
+      color: rgb(255, 0, 0);
+    }
+    8% {
+      color: rgb(255, 127, 0);
+    }
+    16% {
+      color: rgb(255, 255, 0);
+    }
+    25% {
+      color: rgb(127, 255, 0);
+    }
+    33% {
+      color: rgb(0, 255, 0);
+    }
+    41% {
+      color: rgb(0, 255, 127);
+    }
+    50% {
+      color: rgb(0, 255, 255);
+    }
+    58% {
+      color: rgb(0, 127, 255);
+    }
+    66% {
+      color: rgb(0, 0, 255);
+    }
+    75% {
+      color: rgb(127, 0, 255);
+    }
+    83% {
+      color: rgb(255, 0, 255);
+    }
+    91% {
+      color: rgb(255, 0, 127);
+    }
+  }
+  
+  .winner {
+    animation: rainbow 4s infinite linear;
+  }
